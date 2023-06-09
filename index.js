@@ -62,15 +62,23 @@ async function sleep(millis) {
 // Explanation: There are 3 positive integers and 3 negative integers. The maximum count among them is 3.
 
 var maximumCount = function(nums) {
-    let mySet = new Set(nums)
-    let numsArray = Array.from(mySet);
-    let newNums = [];
-    numsArray.forEach(num => {
-        if (num >= 0) {
-            newNums.push(num)
+    let positiveNums = [];
+    let negativeNums = [];
+    nums.forEach(num => {
+        if (num > 0) {
+            positiveNums.push(num)
+        } else if (num < 0) {
+            negativeNums.push(num)
+        } else if (num === 0) {
+            let zeroArray = nums.filter(num => num === 0);
+            if (zeroArray.length === 0) {
+                positiveNums.push(num);
+            } else if (zeroArray.length >= 1) {
+                
+            }
         }
     })
 
-    return newNums.length;
+    return positiveNums.length > negativeNums.length ? positiveNums.length : negativeNums.length
 
 };
