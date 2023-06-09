@@ -82,3 +82,22 @@ var maximumCount = function(nums) {
     return positiveNums.length > negativeNums.length ? positiveNums.length : negativeNums.length
 
 };
+
+
+// Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+// You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+// You can return the answer in any order.
+
+
+var twoSum = function(nums, target) {
+    // First start iterating over array
+    for (let i = 0; i < nums.length; i++){
+        // Then for each number in array, we will iterate again to check next number
+        for (let j = i + 1; j < nums.length; j++){
+            // For each of i Iteration, we will iterate all j, so check if i + j === target
+             if (nums[i] + nums[j] === target) return [i, j]
+        }
+    }
+};
