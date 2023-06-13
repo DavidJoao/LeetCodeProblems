@@ -147,3 +147,11 @@ var strStr = function(haystack, needle) {
     const result = haystack.indexOf(needle);
     return result === undefined ? -1 : result;
 };
+
+//      58
+// Given a string s consisting of words and spaces, return the length of the last word in the string.
+
+var lengthOfLastWord = function(s) {
+    const stringArray = s.trim().split(' ')
+    return (stringArray[stringArray.length - 1].length)
+};
