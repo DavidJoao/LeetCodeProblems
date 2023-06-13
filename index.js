@@ -209,3 +209,17 @@ var createHelloWorld = function() {
        return 'Hello World'
    }
 };
+
+// 2703. Return Length of Arguments Passed
+// Write a function argumentsLength that returns the count of arguments passed to it.
+// OPTION 1 
+var argumentsLength = function(...args) {
+   return args.length
+};
+
+// OPTION 2
+var argumentsLength = function(...args) {
+   let sum = 0;
+   for (let arg of args) sum += 1;
+   return sum;
+};
