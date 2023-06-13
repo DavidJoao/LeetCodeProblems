@@ -155,3 +155,37 @@ var lengthOfLastWord = function(s) {
     const stringArray = s.trim().split(' ')
     return (stringArray[stringArray.length - 1].length)
 };
+
+//    66
+// FIRST VERSION (93 / 111 CASES PASSED)
+
+var plusOne = function(digits) {
+   let tempArray = [];
+   digits[digits.length - 1] = digits[digits.length - 1] + 1
+   digits.forEach((digit) => {
+       if (digit.toString().split('').length > 1) {
+           digit.toString().split('').forEach(num => tempArray.push(parseInt(num)))
+       } else {
+           tempArray.push(digit)
+       }
+   })
+
+   return tempArray
+};
+
+// SECOND VERSION 
+var plusOne = function(digits) {
+   let newDigit = Number(digits.join('')) + 1
+   let newArr = newDigit.toString().split('')
+   let resultArr = [];
+   newArr.forEach(num => {
+      resultArr.push(parseInt(num))
+   })
+   return resultArr
+};
+
+
+//LAST VERSION
+var plusOne = function(digits) {
+   return (parseInt(digits.join('')) + 1).toString().split('')
+};
